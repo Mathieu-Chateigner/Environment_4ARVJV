@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: YuME_tilesData
   m_EditorClassIdentifier: 
   SymmetryX:
-  - {fileID: 4920610295872407157, guid: f89d27536a45bbe458e9b2e366f61c93, type: 3}
-  SymmetryL:
-  - {fileID: 5233897127652080681, guid: a9312b9a686331649b5f82b4b4f1a711, type: 3}
-  SymmetryT:
-  - {fileID: 3198403033147004130, guid: 94b2655e703a2244f82ee5a3addb6dcb, type: 3}
+  - {fileID: 2632087050022204116, guid: 4bc1dbf0b83c38b4e89bd489e863ca33, type: 3}
+  - {fileID: 6440450412021142183, guid: edc6c48bd4eabf843ad7c43b975f5bfc, type: 3}
+  SymmetryL: []
+  SymmetryT: []
   SymmetryI: []
   SymmetrySlash: []
