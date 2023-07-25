@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1923b6bdd0a346ecafb5d8f590b6ab38, type: 3}
+  m_Name: YuME_tilesData
+  m_EditorClassIdentifier: 
+  SymmetryX:
+  - {fileID: 4920610295872407157, guid: f89d27536a45bbe458e9b2e366f61c93, type: 3}
+  SymmetryL:
+  - {fileID: 5233897127652080681, guid: a9312b9a686331649b5f82b4b4f1a711, type: 3}
+  SymmetryT:
+  - {fileID: 3198403033147004130, guid: 94b2655e703a2244f82ee5a3addb6dcb, type: 3}
+  SymmetryI: []
+  SymmetrySlash: []
