@@ -156,6 +156,7 @@ public class GameManager : MonoBehaviour
                 population = EvolvePopulation(population);
                 RegenerateCreatures(population);
                 trainDuration += .2f;
+                if (trainDuration >= 20f) trainDuration = 20f;
             }
             runNN3(population);
 
@@ -230,7 +231,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (Individual individual in individuals)
         {
-            individual.fitness = 1 / Vector3.Distance(new Vector3(0f, 1.646601f, 0f), individual.creature.transform.GetChild(0).position);
+            individual.fitness = 1 / Vector3.Distance(bodySpawnPoint, individual.creature.transform.GetChild(0).position);
         }
     }
     
