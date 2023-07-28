@@ -1,4 +1,5 @@
-﻿using Core.Data;
+﻿using System;
+using Core.Data;
 using Core.Data.OverlappingModel;
 using Core.Data.SimpleTiledModel;
 using Core.InputProviders;
@@ -48,6 +49,11 @@ namespace Core
 	    private SimpleTiledMode3d simpleTiledModel;
 	    private InputOverlappingData inputOverlappingData;
 	    private Coroutine runningCoroutine;
+
+	    private void Start()
+	    {
+		    GenerateSimpleTiledOutput();
+	    }
 
 	    public void GenerateOverlappingOutput()
 	    {

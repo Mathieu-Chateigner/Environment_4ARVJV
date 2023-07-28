@@ -29,7 +29,7 @@ namespace Core
 
         public void UpdateStates()
         {
-            Debug.Log("Update states");
+            //Debug.Log("Update states");
             for (var x = 0; x < width; x++)
             for (var y = 0; y < height; y++)
             for (var z = 0; z < depth; z++)
@@ -91,7 +91,7 @@ namespace Core
                 }
                 tileObject = Instantiate(tile.Config.Prefab, transform);
                 tileObject.transform.localPosition = new Vector3(x, y, z);
-                Debug.Log("Rotation " + tile.Rotation);
+                //("Rotation " + tile.Rotation);
                 var oldRot = tileObject.transform.localEulerAngles;
                 oldRot.y = 90 * Random.Range(0, 3);
                 tileObject.transform.localEulerAngles = oldRot;

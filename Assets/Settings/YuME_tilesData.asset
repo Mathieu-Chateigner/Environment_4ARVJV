@@ -15,13 +15,13 @@ MonoBehaviour:
   SymmetryX:
   - {fileID: 3361669951798529160, guid: 25b180b3cfe834b4690caff5b02371cb, type: 3}
   - {fileID: 5356711251092901333, guid: 3755caf1b17bd5645b461f5bbe7f4878, type: 3}
+  - {fileID: 6842746665651994053, guid: 0a13f49e2a954a9458a6bbfea0db68f8, type: 3}
   - {fileID: 734642001615471012, guid: a269a3faebca3c042a7f3f0a9ec69d77, type: 3}
   - {fileID: 5805239179549537796, guid: c62c8a69f8c7dac41a172551fc1d8e78, type: 3}
   - {fileID: 1985854969152023365, guid: 8c16c36042821fe40a26263766f45035, type: 3}
   - {fileID: 4187859651779456137, guid: e6d3632ab6e83e04eaeb5732f9bc492b, type: 3}
   - {fileID: 4199440692431337659, guid: 50ccf441c7a377644a1c6a3824600ef1, type: 3}
   - {fileID: 6229587341147835644, guid: 7626a63139d52704796417d700c6efe6, type: 3}
-  - {fileID: 6842746665651994053, guid: 0a13f49e2a954a9458a6bbfea0db68f8, type: 3}
   - {fileID: 7178877818695956847, guid: 2839ba15bec9d5e4eb78690d426ace60, type: 3}
   SymmetryL: []
   SymmetryT: []
