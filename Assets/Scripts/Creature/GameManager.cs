@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     private bool started = false;
     public Camera camera;
+    private float generatingTime = 0f;
 
     private void Awake()
     {
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         WFCG = WaveFunctionCollapseGenerator.instance;
         bodySpawnPoint = new Vector3(spawnPoint.x, spawnPoint.y + 1.646601f, spawnPoint.z);
 
+        setGeneratingView();
         /*int[] layers = new int[3]{ 5, 5, 4 };
         string[] activation = new string[2] { "sigmoid", "sigmoid" };
         this.net = new NeuralNetwork(layers, activation);
@@ -100,6 +102,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Generating timer
+        if (!started)
+        {
+            generatingTime += Time.deltaTime;
+            executionFitnessText.text = "GENERATING TIME : " + generatingTime.ToString("F3") + "s";
+        }
+
         if (!started && WFCG.finishGeneration)
         {
             started = true;
@@ -107,6 +116,8 @@ public class GameManager : MonoBehaviour
             population = InitiatePopulation(popSize, true);
             ColorizePopulation(population);
             Time.timeScale = trainingSpeed;
+            
+            setTrainingView();
         }
 
         if (!started) return;
@@ -116,10 +127,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             trainLoop = false;
             executionLoop = true;
-            status.text = "EXECUTION";
             DestroyCreatures(population);
             population = new []{ fittestOfAll };
             RegenerateCreatures(population);
+            
+            setExecutingView();
         }
 
         if (trainLoop)
@@ -143,6 +155,7 @@ public class GameManager : MonoBehaviour
                 DestroyCreatures(population);
                 population = EvolvePopulation(population);
                 RegenerateCreatures(population);
+                trainDuration += .2f;
             }
             runNN3(population);
 
@@ -401,5 +414,35 @@ public class GameManager : MonoBehaviour
         Color randomColor = new Color(Random.value, Random.value, Random.value);
         newMaterial.color = randomColor;
         return newMaterial;
+    }
+
+    private void setGeneratingView()
+    {
+        status.text = "GENERATING TERRAIN";
+        status.color = new Color(1f, 1f, .5f);
+        generationText.enabled = false;
+        bestFitnessText.enabled = false;
+        bestPopulationFitnessText.enabled = false;
+        executionFitnessText.text = "";
+    }
+
+    private void setTrainingView()
+    {
+        status.text = "TRAINING";
+        status.color = new Color(0.5100101f, 0.5019608f, 1f);
+        generationText.enabled = true;
+        bestFitnessText.enabled = true;
+        bestPopulationFitnessText.enabled = true;
+        executionFitnessText.text = "GENERATING TIME : " + generatingTime.ToString("F3") + "s";
+    }
+
+    private void setExecutingView()
+    {
+        status.text = "EXECUTING BEST";
+        status.color = new Color(0.5100101f, 0.5019608f, 1f);
+        generationText.enabled = true;
+        bestFitnessText.enabled = true;
+        bestPopulationFitnessText.enabled = true;
+        executionFitnessText.text = "";
     }
 }
