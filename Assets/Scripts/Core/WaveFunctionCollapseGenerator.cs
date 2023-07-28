@@ -12,6 +12,8 @@ namespace Core
 {
     public class WaveFunctionCollapseGenerator : MonoBehaviour
     {
+	    public static WaveFunctionCollapseGenerator instance;
+	    
 	    [SerializeField] 
 	    private InputDataProvider dataProvider;
 
@@ -49,7 +51,22 @@ namespace Core
 	    private SimpleTiledMode3d simpleTiledModel;
 	    private InputOverlappingData inputOverlappingData;
 	    private Coroutine runningCoroutine;
+	    public bool finishGeneration = false;
 
+	    private void Awake()
+	    {
+		    // If there is an instance, and it's not me, delete myself.
+
+		    if (instance != null && instance != this)
+		    {
+			    Destroy(this);
+		    }
+		    else
+		    {
+			    instance = this;
+		    }
+	    }
+	    
 	    private void Start()
 	    {
 		    GenerateSimpleTiledOutput();
@@ -88,6 +105,7 @@ namespace Core
 
 	    private void OnResult(bool result)
 	    {
+		    finishGeneration = true;
 		    Debug.Log("Result is : " + result);
 	    }
 

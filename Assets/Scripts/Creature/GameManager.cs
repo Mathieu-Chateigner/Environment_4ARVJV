@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Core;
 using Newtonsoft.Json;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,7 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private WaveFunctionCollapseGenerator WFCG;
 
     [SerializeField] private GameObject cubePrefab;
 
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        WFCG = WaveFunctionCollapseGenerator.instance;
         bodySpawnPoint = new Vector3(spawnPoint.x, spawnPoint.y + 1.646601f, spawnPoint.z);
 
         /*int[] layers = new int[3]{ 5, 5, 4 };
@@ -97,7 +100,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!started && Input.GetKeyDown((KeyCode.Space)))
+        if (!started && WFCG.finishGeneration)
         {
             started = true;
             
