@@ -92,7 +92,7 @@ public abstract class Model3d<PARAM> : IModel3d where PARAM : WaveFunctionCollap
 				resultCallback(result.Value);
 				break;
 			}
-			Debug.Log("Propagate, iteration: " + l);
+			//Debug.Log("Propagate, iteration: " + l);
 			Propagate();
 			iterationCallback(wave);
 			yield return null;

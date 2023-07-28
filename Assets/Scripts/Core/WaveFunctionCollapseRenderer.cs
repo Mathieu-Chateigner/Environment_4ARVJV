@@ -93,7 +93,7 @@ namespace Core
                 tileObject.transform.localPosition = new Vector3(x, y, z);
                 Debug.Log("Rotation " + tile.Rotation);
                 var oldRot = tileObject.transform.localEulerAngles;
-                oldRot.y = tile.Rotation * 90;
+                oldRot.y = 90 * Random.Range(0, 3);
                 tileObject.transform.localEulerAngles = oldRot;
                 return tileObject;
             }
